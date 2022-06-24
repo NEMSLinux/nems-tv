@@ -1,0 +1,7 @@
+FROM: https://github.com/fnordpojk/merlin-dashboard
+
+Updated for NEMS Linux's TV display by Robbie Ferguson
+
+Please see README~old for the credits. Licensed under GPL.
+
+This fork requires NEMS Linux - https://nemslinux.com/

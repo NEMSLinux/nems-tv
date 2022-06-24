@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Set permissions
+  chown -R www-data:www-data /var/www/nems-tv
+  chown root:root /etc/apache2/conf-available/nems-tv.conf
+
+## Enable nems-tv
+  a2enconf nems-tv
+
+## Reload apache2
+  /usr/bin/systemctl reload apache2
