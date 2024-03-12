@@ -58,7 +58,7 @@ function sort_by_state($a, $b) {
             <?php
             $save = "";
             $output = "";
-            while ( list(, $row) = each($livestatus->unhandled->hosts) ) {
+            foreach ($livestatus->unhandled->hosts as $row) {
                 $output .=  "<tr class=\"critical\"><td>" . $thisserver['state']['decrypted']->alias . "</td><td>".$row[0]."</td><td>".$row[1]."</td></tr>";
                 $save .= $row[0];
             }
@@ -161,7 +161,7 @@ function sort_by_state($a, $b) {
             $save = "";
             $output = "";
 
-            while ( list(, $row) = each($livestatus->unhandled->services) ) {
+            foreach ($livestatus->unhandled->services as $row) {
                 if ($row[2] == 2) {
                     $class = "critical";
                 } elseif ($row[2] == 1) {

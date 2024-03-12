@@ -130,7 +130,7 @@ function queryLivestatus($query) {
             <?php 
 
             $hosts = array();
-            while ( list(, $filter) = each($custom_filters) ) {
+            foreach ($custom_filters as $filter) {
 
 if ($in_notification_period == 1) {
 $query = <<<"EOQ"
@@ -168,7 +168,7 @@ EOQ;
 
             $save = "";
             $output = "";
-            while ( list(, $row) = each($hosts) ) {
+            foreach ($hosts as $row) {
                 $output .=  "<tr class=\"critical\"><td>".$row[0]."</td><td>".$row[1]."</td></tr>";
                 $save .= $row[0];
             }
@@ -205,7 +205,7 @@ EOQ;
             $total_hosts = 0;
 
             reset($custom_filters);
-            while ( list(, $filter) = each($custom_filters) ) {
+            foreach ($custom_filters as $filter) {
 $query = <<<"EOQ"
 GET hosts
 Filter: $filter
@@ -241,7 +241,7 @@ EOQ;
             $total_services = 0;
 
             reset($custom_filters);
-            while ( list(, $filter) = each($custom_filters) ) {
+            foreach ($custom_filters as $filter) {
 $query = <<<"EOQ"
 GET services
 Filter: $filter
@@ -345,7 +345,7 @@ EOQ;
 
             reset($custom_filters);
             $services = array();
-            while ( list(, $filter) = each($custom_filters) ) {
+            foreach ($custom_filters as $filter) {
 
 if ($in_notification_period == 1) {
 $query = <<<"EOQ"
@@ -389,7 +389,7 @@ EOQ;
 
             $save = "";
             $output = "";
-            while ( list(, $row) = each($services) ) {
+            foreach ($services as $row) {
                 if ($row[2] == 2) {
                     $class = "critical";
                 } elseif ($row[2] == 1) {
